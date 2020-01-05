@@ -6,7 +6,7 @@
 
 #### 项目分工
 * 由17级唐颖欣负责提供数据和对数据故事具有表现力的地图等，包含两份数据，两份图表，还提供了ipynb文档
-* 由18级卢继志和我共同部署一个网页，通过掌握到的python知识，比如*条件判断、推导式、循环等，实现了具有交互功能的html页面，比如下拉框和数据表格交互，下拉框和条形图交互，共同编写css、html等*，我也适当的从 www.jq22.com 引进了一些插件，对网页实现除数据外的交互效果，对网页进行美化，最后将网页部署到Pythonanywhere
+* 由18级卢继志和我共同部署网页，我通过掌握到的python知识，比如**条件判断、推导式、循环遍历等，实现了具有交互功能的html页面，比如下拉框和数据表格交互，下拉框和条形图交互，编写了网页基本的css样式、html等**，我也适当的从 www.jq22.com 引进了一些插件，对网页实现除数据外的交互效果，对网页进行美化，最后将网页部署到Pythonanywhere
 
 * [Pythonanywhere URL](http://qiu33.pythonanywhere.com)：http://qiu33.pythonanywhere.com
 * [Github URL](https://github.com/qiu33/Python)：https://github.com/qiu33/Python
