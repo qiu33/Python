@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1718❤常用app近两年增幅</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <link rel="stylesheet" href="static/asidenav.css">
+</head>
+<body>
+<style type="text/css">
+*{ margin:0; padding:0; list-style:none;}
+body{font-size:14px;color:#555555;}
+
+.navbox{height:40px;position:relative;z-index:9; margin:auto;background:#554b4a;filter:alpha(opacity=90);-moz-opacity:0.90;opacity:0.90;font-family:'微软雅黑';}
+.nav{width:350px;margin:0 auto;height:40px; list-style:none;}
+.nav li{float:left;height:40px;position:relative; list-style:none;}
+.nav li.last{background:none;}
+.nav li a{text-decoration:none;}
+.nav li a span{line-height:40px;font-size:20px;color:#ffffff;cursor:pointer;width:100px;text-align:center; }
+
+
+
+</style>
+<div class="navbox">
+  <div class="nav">
+
+      <li class="drop-menu-effect"><a><span>近两年十一月份APP增幅榜变化及对比</span></a></li>
+
+
+
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+<div>
+    <svg width="0" height="0">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <div class="aside-nav bounceInUp animated" id="aside-nav">
+        <label for="" class="aside-menu" title="按住拖动">项目人</label>
+
+        <a href="https://github.com/Eddieda6/" title="17级唐颖欣" class="menu-item menu-first">唐颖欣</a>
+        <a href="https://github.com/qiu33/" title="18级邱珊珊" class="menu-item menu-second">邱珊珊</a>
+        <a href="https://github.com/lujizhi/" title="18级卢继志" class="menu-item menu-third">卢继志</a>
+    </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="static/asidenav.js">
+</script>
+<div style="size: 70px"><b>{% if text %}
+    近两年十一月份APP增幅榜变化
+{% endif %}</b></div>
+<div>
+    <p style="text-indent:2em">{{ text }}</p>
+</div>
+<div style="size: 50px;clear: both"><b>{% if text1 %}
+    总结
+{% endif %}</b></div>
+<div>
+    <p style="text-indent:2em">{{ text1 }}</p>
+</div>
+<div id="c7243c5a3af846958127086b97349661" class="chart-container" style="width:900px; height:500px;"></div>
+
+<form action="/" style="float: left">
+    <button type="submit">首页</button>
+</form>
+{% if aa==1 %}
+    <form action="/appadd" style="float: left;margin-left: 10px">
+        <select name="cici">
+            {% for foo in select1 %}
+                <option value="{{ foo }}">{{ foo }}</option>
+            {% endfor %}
+
+        </select>
+        <button type="submit">选择</button>
+    </form>
+
+{% endif %}
+{% if aa!=1 %}
+    <form action="/appadd" style="float: left;margin-left: 10px">
+        <input hidden name="cici" value="手机淘宝">
+        <button type="submit" style="margin-left: 10px">APP发展</button>
+    </form>
+    </form>
+{% endif %}
+{% if bb==1 %}
+    <form action="/select" style="margin-left: 20px">
+        <span>请选择</span>
+        <select name="city">
+            {% for i in select %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button>选择</button>
+    </form>
+{% endif %}
+{% if bb!=1 %}
+    <form action="/select" style="margin-left: 20px">
+        <input name="city" value="北京" hidden>
+        <button style="margin-left: 10px">各省数据</button>
+    </form>
+{% endif %}
+{{ myechart|safe }}
+{% if result %}
+    <table border="1" style="clear: both">
+        <tr>
+            {% if prevention %}
+                <td colspan="5" style="text-align: center"> {{ prevention }}省/市公司数据</td>
+            {% endif %}
+            {% if not prevention %}
+                <td colspan="5" style="text-align: center"> 全国各公司数据</td>
+            {% endif %}
+        </tr>
+        <tr>
+            {% for column in columns %}
+                <td style="width: 50px;text-align: center">{{ column }}</td>
+            {% endfor %}
+        </tr>
+        {% for foo in result %}
+            <tr>
+                {% for i in foo %}
+                    <td style="width: 50px;text-align: center">{{ i }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<script>
+    var chart_c7243c5a3af846958127086b97349661 = echarts.init(
+        document.getElementById('c7243c5a3af846958127086b97349661'), 'white', {renderer: 'canvas'});
+    var option_c7243c5a3af846958127086b97349661 = {
+        "animation": true,
+        "animationThreshold": 2000,
+        "animationDuration": 1000,
+        "animationEasing": "cubicOut",
+        "animationDelay": 0,
+        "animationDurationUpdate": 300,
+        "animationEasingUpdate": "cubicOut",
+        "animationDelayUpdate": 0,
+        "color": [
+            "#c23531",
+            "#2f4554",
+            "#61a0a8",
+            "#d48265",
+            "#749f83",
+            "#ca8622",
+            "#bda29a",
+            "#6e7074",
+            "#546570",
+            "#c4ccd3",
+            "#f05b72",
+            "#ef5b9c",
+            "#f47920",
+            "#905a3d",
+            "#fab27b",
+            "#2a5caa",
+            "#444693",
+            "#726930",
+            "#b2d235",
+            "#6d8346",
+            "#ac6767",
+            "#1d953f",
+            "#6950a1",
+            "#918597"
+        ],
+        "series": [
+            {
+                "type": "bar",
+                "name": "\u624b\u673a\u6dd8\u5b9d",
+                "data": [
+                    67167,
+                    72005
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u4eac\u4e1c",
+                "data": [
+                    25578,
+                    29069
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u62fc\u591a\u591a",
+                "data": [
+                    29019,
+                    39671
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u82cf\u5b81\u6613\u8d2d",
+                "data": [
+                    6163,
+                    5723
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u5929\u732b",
+                "data": [
+                    7395,
+                    6567
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u6296\u97f3\u77ed\u89c6\u9891",
+                "data": [
+                    29347,
+                    42663
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u5feb\u624b",
+                "data": [
+                    871,
+                    4072
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u817e\u8baf\u5fae\u89c6",
+                "data": [
+                    26606,
+                    32461
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            },
+            {
+                "type": "bar",
+                "name": "\u706b\u5c71\u5c0f\u89c6\u9891",
+                "data": [
+                    14628,
+                    32461
+                ],
+                "barCategoryGap": "20%",
+                "label": {
+                    "show": true,
+                    "position": "top",
+                    "margin": 8
+                }
+            }
+        ],
+        "legend": [
+            {
+                "data": [
+                    "\u624b\u673a\u6dd8\u5b9d",
+                    "\u4eac\u4e1c",
+                    "\u62fc\u591a\u591a",
+                    "\u82cf\u5b81\u6613\u8d2d",
+                    "\u5929\u732b",
+                    "\u6296\u97f3\u77ed\u89c6\u9891",
+                    "\u5feb\u624b",
+                    "\u817e\u8baf\u5fae\u89c6",
+                    "\u706b\u5c71\u5c0f\u89c6\u9891"
+                ],
+                "selected": {
+                    "\u624b\u673a\u6dd8\u5b9d": true,
+                    "\u4eac\u4e1c": true,
+                    "\u62fc\u591a\u591a": true,
+                    "\u82cf\u5b81\u6613\u8d2d": true,
+                    "\u5929\u732b": true,
+                    "\u6296\u97f3\u77ed\u89c6\u9891": true,
+                    "\u5feb\u624b": true,
+                    "\u817e\u8baf\u5fae\u89c6": true,
+                    "\u706b\u5c71\u5c0f\u89c6\u9891": true
+                },
+                "show": true,
+                "padding": 5,
+                "itemGap": 10,
+                "itemWidth": 25,
+                "itemHeight": 14
+            }
+        ],
+        "tooltip": {
+            "show": true,
+            "trigger": "item",
+            "triggerOn": "mousemove|click",
+            "axisPointer": {
+                "type": "line"
+            },
+            "textStyle": {
+                "fontSize": 14
+            },
+            "borderWidth": 0
+        },
+        "xAxis": [
+            {
+                "show": true,
+                "scale": false,
+                "nameLocation": "end",
+                "nameGap": 15,
+                "gridIndex": 0,
+                "inverse": false,
+                "offset": 0,
+                "splitNumber": 5,
+                "minInterval": 0,
+                "splitLine": {
+                    "show": false,
+                    "lineStyle": {
+                        "width": 1,
+                        "opacity": 1,
+                        "curveness": 0,
+                        "type": "solid"
+                    }
+                },
+                "data": [
+                    "2018.11",
+                    "2019.11"
+                ]
+            }
+        ],
+        "yAxis": [
+            {
+                "show": true,
+                "scale": false,
+                "nameLocation": "end",
+                "nameGap": 15,
+                "gridIndex": 0,
+                "inverse": false,
+                "offset": 0,
+                "splitNumber": 5,
+                "minInterval": 0,
+                "splitLine": {
+                    "show": false,
+                    "lineStyle": {
+                        "width": 1,
+                        "opacity": 1,
+                        "curveness": 0,
+                        "type": "solid"
+                    }
+                }
+            }
+        ],
+        "title": [
+            {}
+        ]
+    };
+    chart_c7243c5a3af846958127086b97349661.setOption(option_c7243c5a3af846958127086b97349661);
+</script>
+</body>
+</html>

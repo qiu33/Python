@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>1718❤</title>
+    <link rel="stylesheet" href="static/asidenav.css">
+    {% for jsfile_name in script_list %}
+        <script src="../static/{{ jsfile_name }}.js"></script>
+    {% endfor %}
+</head>
+
+<body>
+    <div class="aside-nav bounceInUp animated" id="aside-nav">
+        <label for="" class="aside-menu" title="按住拖动">项目人</label>
+
+        <a href="https://github.com/Eddieda6/" title="17级唐颖欣" class="menu-item menu-first">唐颖欣</a>
+        <a href="https://github.com/qiu33/" title="18级邱珊珊" class="menu-item menu-second">邱珊珊</a>
+        <a href="https://github.com/lujizhi/" title="18级卢继志" class="menu-item menu-third">卢继志</a>
+    </div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="static/asidenav.js">
+</script>
+<form action="/" style="float: left">
+    <button type="submit">首页</button>
+</form>
+{% if aa==1 %}
+    <form action="/appadd" style="float: left;margin-left: 10px">
+        <select name="cici">
+            {% for foo in select1 %}
+                <option value="{{ foo }}">{{ foo }}</option>
+            {% endfor %}
+
+        </select>
+        <button type="submit">选择</button>
+    </form>
+
+{% endif %}
+{% if aa!=1 %}
+    <form action="/appadd" style="float: left;margin-left: 10px">
+        <input hidden name="cici" value="手机淘宝">
+        <button type="submit" style="margin-left: 10px">APP发展</button>
+    </form>
+    </form>
+{% endif %}
+{% if bb==1 %}
+    <form action="/select" style="margin-left: 20px">
+        <span>请选择</span>
+        <select name="city">
+            {% for i in select %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <button>选择</button>
+    </form>
+{% endif %}
+{% if bb!=1 %}
+    <form action="/select" style="margin-left: 20px">
+        <input name="city" value="北京" hidden>
+        <button style="margin-left: 10px">各省数据</button>
+    </form>
+{% endif %}
+{{ myechart|safe }}
+{% if result %}
+    <table border="1" style="clear: both">
+        <tr>
+            {% if prevention %}
+                <td colspan="5" style="text-align: center"> {{ prevention }}省/市公司数据</td>
+            {% endif %}
+            {% if not prevention %}
+                <td colspan="5" style="text-align: center"> 全国各公司数据</td>
+            {% endif %}
+        </tr>
+        <tr>
+            {% for column in columns %}
+                <td style="width: 50px;text-align: center">{{ column }}</td>
+            {% endfor %}
+        </tr>
+        {% for foo in result %}
+            <tr>
+                {% for i in foo %}
+                    <td style="width: 50px;text-align: center">{{ i }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<div style="size: 50px"><b>{% if text %}
+    分析
+{% endif %}</b></div>
+<div style="float: left;width: 70%">
+    <p style="text-indent:2em">{{ text }}</p>
+</div>
+<div style="size: 50px;clear: both"><b>{% if text1 %}
+    总结
+{% endif %}</b></div>
+<div style="float: left;width: 70%">
+    <p style="text-indent:2em">{{ text1 }}</p>
+</div>
+</body>
+
+</html>
