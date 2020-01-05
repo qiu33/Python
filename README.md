@@ -6,13 +6,13 @@
 
 #### 项目分工
 * 由17级唐颖欣负责提供数据和对数据故事具有表现力的地图等，包含两份数据，两份图表，还提供了ipynb文档
-* 由18级卢继志和我共同部署一个网页，通过掌握到的python知识，比如*条件判断、推导式、循环等，实现了具有交互功能的html页面，比如下拉框和数据表格交互，下拉框和条形图交互，共同编写css、html等*，我也适当的从www.jq22.com引进了一些插件，对网页实现除数据外的交互效果，对网页进行美化，最后将*网页部署到Pythonanywhere*
+* 由18级卢继志和我共同部署一个网页，通过掌握到的python知识，比如*条件判断、推导式、循环等，实现了具有交互功能的html页面，比如下拉框和数据表格交互，下拉框和条形图交互，共同编写css、html等*，我也适当的从 www.jq22.com 引进了一些插件，对网页实现除数据外的交互效果，对网页进行美化，最后将网页部署到Pythonanywhere
 
 * [Pythonanywhere URL](http://qiu33.pythonanywhere.com)：http://qiu33.pythonanywhere.com
 * [Github URL](https://github.com/qiu33/Python)：https://github.com/qiu33/Python
 
 
-分别有3个url
+* 页面内分别有3个url
 1.	[首页](http://qiu33.pythonanywhere.com)：该页面主要展示国内前100名mcn的分布情况
 2.	[各省数据](http://qiu33.pythonanywhere.com/appadd?cici=手机淘宝)：该页面更加详细展示各省mcn机构数量
 3.	[app发展](http://qiu33.pythonanywhere.com/select?city=北京)：该页面展示近两年9个常用app的增长情况
